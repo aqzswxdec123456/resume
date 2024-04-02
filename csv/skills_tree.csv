@@ -1,0 +1,12 @@
+﻿name,parent_name
+資料庫技能,
+關聯性資料庫,資料庫技能
+MySQL,關聯性資料庫
+MariaDB,關聯性資料庫
+非關聯性資料庫,資料庫技能
+MongoDB,非關聯性資料庫
+Redis,非關聯性資料庫
+程式設計,
+Bash,程式設計
+Python,程式設計
+PHP,程式設計
