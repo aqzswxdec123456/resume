@@ -1,4 +1,5 @@
-
+# 簡介
+透過 Python - Django 打造簡易履歷
 
 ## 環境
 * Linux centos 7
@@ -51,7 +52,7 @@ ls /usr/local/python3/bin/django-admin
 export PATH=$PATH:/usr/local/python3/bin
 source ~/.bashrc
 
-# 建立專案
+# 建立專案 假設我放在 /opt 底下
 django-admin startproject dev_resume
 cd dev_resume
 
@@ -60,6 +61,13 @@ python3 manage.py startapp resume
 ```
 
 ## 配置 專案
+* 取得 git 倉庫
+```bash
+# 假設我放在 tmp 底下
+git clone https://github.com/aqzswxdec123456/resume.git
+
+```
+
 * settings.py
 ```bash
 # 修改語系、時區 
@@ -78,20 +86,55 @@ sed -i "/DATABASES = {/a \    'default': {\n        'ENGINE': 'django.db.backend
 
 ```
 * urls.py
+覆蓋專案 url，假設專案與APP不是以下名稱，可自行修改
 ```bash
-# 修改語系、時區 
-
-
+\cp -f /tmp/resume/project/urls.py /opt/dev_resume/dev_resume/urls.py
 ```
 
 ## 配置 APP
-* django
+可以自行配置，以下內容都是參考用
+* admin.py
+* models.py
+* urls.py
+* views.py
 ```bash
-# 配置 html
-mkdir -p dev_resume/templates/dev_resume
-touch dev_resume/templates/dev_resume/resume.html
+\cp -f /tmp/resume/app/admin.py /opt/dev_resume/resume/admin.py
+\cp -f /tmp/resume/app/models.py /opt/dev_resume/resume/models.py
+\cp -f /tmp/resume/app/urls.py /opt/dev_resume/resume/urls.py
+\cp -f /tmp/resume/app/views.py /opt/dev_resume/resume/views.py
 ```
 
-# resume
-透過 Python - Django 打造簡易履歷
+* 建立前端，也可自行配置
+```bash
+# 配置 html
+mkdir -p /opt/dev_resume/resume/templates/dev_resume
+\cp -f /tmp/resume/web/*.html /opt/dev_resume/resume/templates/dev_resume
 
+# 配置 css、js
+mkdir -p /opt/dev_resume/resume/static
+unzip /tmp/resume/startbootstrap-resume-gh-pages.zip -d /tmp/resume/
+\cp -rf /tmp/resume/startbootstrap-resume-gh-pages/{assets,css,js} /opt/dev_resume/resume/static
+```
+
+## 建立 database
+```bash
+CREATE DATABASE dev_resume CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+``` 
+
+## 匯入 database
+```bash
+cd /opt/dev_resume/
+python3 manage.py makemigrations
+python3 manage.py migrate
+\cp -f /tmp/resume/csv/resume.py /opt/dev_resume/
+python3 resume.py 1 /tmp/resume/csv/personal_info.csv
+python3 resume.py 2 /tmp/resume/csv/work_experience.csv
+python3 resume.py 3 /tmp/resume/csv/education.csv
+python3 resume.py 4 /tmp/resume/csv/skills_tree.csv
+``` 
+
+## 運行
+```bash
+python3 manage.py runserver 0.0.0.0:443
+# 開啟 url http://172.31.11.23:443/resume/
+```

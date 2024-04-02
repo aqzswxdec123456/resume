@@ -5,7 +5,7 @@
                 {{ skill.name }}
                 {% if skill.subskills.all %}
                     {% with skills=skill.subskills.all %}
-                        {% include "resume/skill_tree.html" %}
+                        {% include "dev_resume/skill_tree.html" %}
                     {% endwith %}
                 {% endif %}
             </li>

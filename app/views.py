@@ -7,7 +7,7 @@ def resume_view(request):
     job_experiences = JobExperience.objects.all()
     education = Education.objects.all()
 
-    return render(request, 'resume/resume.html', {
+    return render(request, 'dev_resume/resume.html', {
         'personal_info': personal_info,
         'skills': skills,
         'education': education,

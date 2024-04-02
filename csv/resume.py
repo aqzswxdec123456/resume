@@ -3,7 +3,7 @@ import os
 import django
 import csv
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sin_test.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dev_resume.settings')
 django.setup()
 
 from resume.models import PersonalInfo, JobExperience, Education, Skill
