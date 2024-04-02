@@ -1,8 +1,7 @@
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-88vzew=ea*ex*h7!^%1q80qp8q1g-0d8c9=irr3*^u&#^6^k(%'
+SECRET_KEY = 'django-insecure-_%lo_9er$ul$fn!w7vl$qs(rh7)b&v*ay9$zx&94$17-gp+tnf'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -27,7 +26,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sin_test.urls'
+ROOT_URLCONF = 'dev_resume.urls'
 
 TEMPLATES = [
     {
@@ -45,7 +44,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sin_test.wsgi.application'
+WSGI_APPLICATION = 'dev_resume.wsgi.application'
 
 DATABASES = {
     'default': {
@@ -77,9 +76,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 LANGUAGE_CODE = 'zh-Hant'
 TIME_ZONE = 'Asia/Taipei'
 USE_I18N = True
 USE_TZ = True
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
