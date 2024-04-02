@@ -5,12 +5,6 @@
 * [Python](https://www.python.org/downloads/) >= 3.6
 * MariaDB >= 10.4
 
-## 套件
-* django
-```bash
-pip3 install django
-```
-
 ## Python 安裝參考
 ```bash
 yum install wget unzip epel-release gcc gcc-c++ zlib-devel bzip2-devel openssl-devel -y
@@ -23,6 +17,12 @@ cd Python-3.9.16
 make && make install
 ln -s /usr/local/python3/bin/python3.9 /usr/bin/python3 
 ln -s /usr/local/python3/bin/pip3.9 /usr/bin/pip3
+```
+
+## 套件
+* django
+```bash
+pip3 install django
 ```
 
 ## MariaDB 安裝參考
