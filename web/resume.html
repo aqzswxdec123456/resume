@@ -45,10 +45,10 @@
                 <div class="subheading mb-5">
                     聯絡資訊 · {{ personal_info.phone }}
                 </div>
-                <p class="lead mb-5"> 自己填寫自我介紹囉。</p>
+                <p class="lead mb-5"> {{ personal_info.introduction }} </p>
                 <div class="social-icons">
-                    <a class="social-icon" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="social-icon" href=""><i class="fab fa-github"></i></a>    
+                    <a class="social-icon" href="https://www.linkedin.com/in/{{ personal_info.linkedin }}/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="social-icon" href="https://github.com/{{ personal_info.github }}"><i class="fab fa-github"></i></a>    
                 </div>
             </div>
         </section>
