@@ -6,6 +6,9 @@ class PersonalInfo(models.Model):
     english_name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+    introduction = models.CharField(max_length=100)
+    linkedin = models.CharField(max_length=100)
+    github = models.CharField(max_length=100)
     def __str__(self):
         return self.name
 
